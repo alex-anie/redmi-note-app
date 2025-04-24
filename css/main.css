@@ -1,0 +1,133 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-family: sans-serif;
+}
+
+:root {
+    --gray-1: rgb(34, 34, 34);
+    --gray-2: rgb(116, 115, 115);
+    --orchid-1: orchid;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.website-site {
+    width: 70%;
+    margin: 2em auto;
+}
+
+/* Styling input form -- search */
+.form-filed {
+    background-color:var(--gray-1);
+    height: 3em;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.5s ease-in;
+}
+
+.form-filed:focus-within {
+    outline: 1px solid var(--orchid-1);
+}
+
+.form-filed .fa-magnifying-glass, 
+.form-filed .fa-paper-plane {
+    font-size: 1.3em;
+    color: var(--gray-2);
+}
+
+.form-filed label {
+    width: 90%;
+    height: 90%;
+}
+
+.form-filed .search {
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    font-size: large;
+    color: var(--gray-2);
+}
+
+.form-filed .search::placeholder {
+    color: var(--gray-2);
+}
+
+/* Stying Notes */
+.notes-container {
+    margin: 2em 0;
+}
+
+.notes-contents {
+    background-color: var(--gray-1);
+    height: 6em;
+    padding: 0 2em;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.notes-contents:hover {
+    transform: scale(1.02);
+    outline: 1px solid var(--orchid-1);    
+}
+
+.notes-contents .notes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.notes-contents .notes .heading {
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
+.notes-contents .notes .text {
+    color: var(--gray-2);
+}
+
+.notes-contents .notes .date {
+    font-size: 12px;
+    color: var(--gray-2);
+    margin-top: 10px;
+}
+
+/* Styling button */
+.notes-button-wrapper .btn {
+    background-color: var(--gray-2);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: background 0.5s ease-in;
+}
+
+.notes-button-wrapper .btn .fa-xmark {
+    font-size: 1.5em;
+    color: var(--gray-1);
+}
+
+.notes-button-wrapper .btn:hover {
+    background-color: var(--orchid-1);
+}
+
