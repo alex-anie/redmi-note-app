@@ -87,7 +87,7 @@ button {
 }
 
 .notes-contents:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     outline: 1px solid var(--orchid-1);    
 }
 

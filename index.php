@@ -25,18 +25,27 @@
 
         <!-- Notes Contents -->
         <article class="notes-container">
-            <section class="notes-contents">
-                <aside class="notes">
-                    <h4 class="heading">Food items</h4>
-                    <p class="text">Bread and beans</p>
-                    <p class="date">April 16</p>
-                </aside>
-                <aside class="notes-button-wrapper">
-                    <button class="btn">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </aside>
-            </section>
+            <?php 
+                $sql = "SELECT * FROM `notes`" ;
+                $result = mysqli_query($conn, $sql);
+                
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '
+                        <section class="notes-contents">
+                            <aside class="notes">
+                                <h4 class="heading">'.htmlspecialchars($row['title']).'</h4>
+                                <p class="text">'.htmlspecialchars($row['text']).'</p>
+                                <p class="date">'.date("F j", strtotime($row['date'])).'</p>
+                            </aside>
+                            <aside class="notes-button-wrapper">
+                                <button class="btn">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </aside>
+                        </section>
+                    ';
+                }
+            ?>
         </article>
     </main>
 </body>
