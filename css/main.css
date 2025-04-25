@@ -84,6 +84,7 @@ button {
     justify-content: space-between;
     align-items: center;
     transition: all 0.5s ease;
+    margin: 1em 0;
 }
 
 .notes-contents:hover {
@@ -130,4 +131,74 @@ button {
 .notes-button-wrapper .btn:hover {
     background-color: var(--orchid-1);
 }
+
+
+/* CREATE TO DO PAGE */
+.input-title .heading-label {
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+
+.input-title input {
+    background-color:var(--gray-1);
+    height: 3em;
+    border-radius: 40px;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.5s ease-in;
+
+    outline: none;
+    border: none;
+    padding: 0 20px;
+    font-size: large;
+    color: var(--gray-2);
+}
+
+.input-title input:focus {
+    outline: 1px solid var(--orchid-1);
+}
+
+.input-title input::placeholder {
+    color: var(--gray-2);
+}
+
+.text-body textarea {
+    width: 100%;
+    background-color:var(--gray-1);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    color: var(--gray-2);
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+}
+
+.text-body textarea:focus {
+    outline: 1px solid var(--orchid-1);
+}
+
+.btn-submit {
+    background-color: var(--gray-2);
+    cursor: pointer;
+    width: 8em;
+    height: 3em;
+    border-radius: 100px;
+    margin-top: 1em;
+}
+
+.btn-submit .fa-paper-plane {
+    color: var(--gray-1);
+    font-size: 1.3em;
+    transition: all 0.5s ease-in;
+} 
 
