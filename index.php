@@ -47,6 +47,14 @@
                 }
             ?>
         </article>
+
+        <section class="create-btn-wrapper">
+            <div class="create-btn-div">
+                <a href="./create-todo.php">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+        </section>
     </main>
 </body>
 </html>

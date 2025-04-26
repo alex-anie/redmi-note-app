@@ -132,7 +132,6 @@ button {
     background-color: var(--orchid-1);
 }
 
-
 /* CREATE TO DO PAGE */
 .input-title .heading-label {
     display: inline-block;
@@ -183,8 +182,12 @@ button {
     transition: all 0.5s ease-in;
 }
 
+.text-body textarea::placeholder {
+    color: var(--gray-1);
+}
+
 .text-body textarea:focus {
-    outline: 1px solid var(--orchid-1);
+    outline: 1px solid var(--orchid-2);
 }
 
 .btn-submit {
@@ -194,6 +197,11 @@ button {
     height: 3em;
     border-radius: 100px;
     margin-top: 1em;
+    transition: background-color 0.5s ease-in;
+}
+
+.btn-submit:hover {
+    background-color: var(--orchid-1);
 }
 
 .btn-submit .fa-paper-plane {
@@ -201,4 +209,34 @@ button {
     font-size: 1.3em;
     transition: all 0.5s ease-in;
 } 
+
+/* CREATE BUTTON */
+.create-btn-wrapper {
+    position: fixed;
+    bottom: 2em;
+    right: 4em;    
+}
+
+.create-btn-wrapper .create-btn-div {
+    background-color: var(--orchid-1);
+    width: 4em;
+    height: 4em;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    transition: opacity 0.5s ease-in;
+    cursor: pointer;
+}
+
+.create-btn-wrapper .create-btn-div:hover {
+    opacity: 0.6;
+}
+
+.create-btn-wrapper .create-btn-div a {
+    text-decoration: none;
+    font-size: 2em;
+    color: var(--gray-1);
+}
 
