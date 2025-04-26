@@ -32,16 +32,20 @@
                 while($row = mysqli_fetch_assoc($result)){
                     echo '
                         <section class="notes-contents">
-                            <aside class="notes">
-                                <h4 class="heading">'.htmlspecialchars($row['title']).'</h4>
-                                <p class="text">'.htmlspecialchars($row['text']).'</p>
-                                <p class="date">'.date("F j", strtotime($row['date'])).'</p>
-                            </aside>
-                            <aside class="notes-button-wrapper">
-                                <button class="btn">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </button>
-                            </aside>
+                            <a href="update-todo.php?updateid='.$row['id'].'">
+                                <aside class="notes">
+                                    <h4 class="heading">'.htmlspecialchars($row['title']).'</h4>
+                                    <p class="text">'.htmlspecialchars($row['text']).'</p>
+                                    <p class="date">'.date("F j", strtotime($row['date'])).'</p>
+                                </aside>
+                                <aside class="notes-button-wrapper">
+                                <a href="delete-todo.php?deleteid='.$row['id'].'">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </a>
+                                </aside>
+                            </a>
                         </section>
                     ';
                 }

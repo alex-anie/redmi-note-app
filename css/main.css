@@ -21,6 +21,11 @@ button {
     border: none;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .website-site {
     width: 70%;
     margin: 2em auto;
@@ -183,7 +188,7 @@ button {
 }
 
 .text-body textarea::placeholder {
-    color: var(--gray-1);
+    color: var(--gray-2);
 }
 
 .text-body textarea:focus {
