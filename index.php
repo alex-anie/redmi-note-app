@@ -39,7 +39,7 @@
                                     <p class="date">'.date("F j", strtotime($row['date'])).'</p>
                                 </aside>
                                 <aside class="notes-button-wrapper">
-                                <a href="delete-todo.php?deleteid='.$row['id'].'">
+                                <a href="delete.php?deleteid='.$row['id'].'">
                                     <button class="btn">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
