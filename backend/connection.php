@@ -3,7 +3,7 @@
 
     $db_server = "localhost";
     $db_user = "root";
-    $db_password = "";
+    $db_password = "4444";
     $db_name = "redmi-note-db";
 
     try{

@@ -36,7 +36,6 @@
                                 <aside class="notes">
                                     <h4 class="heading">'.htmlspecialchars($row['title']).'</h4>
                                     <p class="text">'.htmlspecialchars($row['text']).'</p>
-                                    <p class="date">'.date("F j", strtotime($row['date'])).'</p>
                                 </aside>
                                 <aside class="notes-button-wrapper">
                                 <a href="delete.php?deleteid='.$row['id'].'">
