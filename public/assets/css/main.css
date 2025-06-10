@@ -43,17 +43,22 @@ a {
     justify-content: center;
     gap: 5px;
     transition: all 0.5s ease-in;
+    padding: 0 1em;
 }
 
 .form-filed:focus-within {
     outline: 1px solid var(--orchid-1);
 }
 
-.form-filed .fa-magnifying-glass, 
-.form-filed .fa-paper-plane {
-    font-size: 1.3em;
-    color: var(--gray-2);
+
+.form-filed .magnifying-glass-icon, 
+.form-filed .search-btn svg {
+    width: 1.3em;
+    height: 1.3em;
+    fill: var(--gray-2);
 }
+
+.search-btn svg { cursor: pointer;}
 
 .form-filed label {
     width: 90%;
@@ -128,9 +133,11 @@ a {
     transition: background 0.5s ease-in;
 }
 
-.notes-button-wrapper .btn .fa-xmark {
-    font-size: 1.5em;
-    color: var(--gray-1);
+.notes-button-wrapper .btn svg {
+    /* font-size: 1.5em; */
+    width: 1.5em;
+    height: 1.5em;
+    fill: var(--gray-1);
 }
 
 .notes-button-wrapper .btn:hover {
@@ -209,10 +216,10 @@ a {
     background-color: var(--orchid-1);
 }
 
-.btn-submit .fa-paper-plane {
-    color: var(--gray-1);
-    font-size: 1.3em;
-    transition: all 0.5s ease-in;
+.btn-submit svg {
+    fill: var(--gray-1);
+    width: 1em;
+    height: 1em;
 } 
 
 /* CREATE BUTTON */
@@ -232,16 +239,16 @@ a {
     align-items: center;
     border-radius: 100px;
     transition: opacity 0.5s ease-in;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .create-btn-wrapper .create-btn-div:hover {
     opacity: 0.6;
 }
 
-.create-btn-wrapper .create-btn-div a {
-    text-decoration: none;
-    font-size: 2em;
-    color: var(--gray-1);
+.create-btn-wrapper .create-btn-div svg {
+    width: 2em;
+    height: 2em;
+    fill: var(--gray-1);
 }
 
