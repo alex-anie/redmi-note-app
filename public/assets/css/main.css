@@ -252,3 +252,39 @@ a {
     fill: var(--gray-1);
 }
 
+/* search-not-found-text */
+.search-not-found-text {
+    font-weight: 100;
+    font-style: italic;
+    color: var(--gray-2);
+}
+
+/* Pagination */
+.pagination .btn {
+    display: inline-block;
+    border: 1px solid var(--gray-2);
+    padding: 5px 10px;
+    margin: 10px;
+    transition: background 0.5s linear;
+}
+.pagination .btn:hover {
+    background-color: var(--gray-2);
+}
+
+.pagination-page-info p {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--gray-2);
+}
+
+.pagination-toggles {
+    display: flex;
+}
+
+.pagination-page-numbers .btn-numbs.active {
+    background-color: var(--orchid-1);
+}
+
+.pagination-page-numbers .btn-numbs:focus {
+    border: 1px solid var(--orchid-1);
+}

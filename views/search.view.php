@@ -1,11 +1,7 @@
-<?php require '../controllers/search.controller.php'?>
 <?php require '../controllers/home.controller.php';?>
-
-<?php if(count($results) === 0): ?>
-    <div>No results found .</div>
-
-    <?php else: ?>
-        <?php foreach($results as $note): ?>
+<?php require '../controllers/search.controller.php'?>
+<?php if($queryResult > 0): ?>
+    <?php while($note = mysqli_fetch_assoc($result)): ?>
             <article class="notes-container">
             <section class="notes-contents">
                 <a href="/update?updateId=<?=$note['id']?>">
@@ -24,5 +20,10 @@
                 </a>
             </section>
         </article>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
+        
+    <?php else: ?>
+        <article class="notes-container">
+            <h1>Not search Found for <span class="search-not-found-text">'<?= $_POST['search']?>'</span></h1>
+        </article>
 <?php endif; ?>

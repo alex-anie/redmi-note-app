@@ -10,20 +10,26 @@
     <!-- <link rel="stylesheet" href="css/main.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+    <?php
+        if(isset($_GET['page-nr'])){
+            $id = $_GET['page-nr'];
+        }else {
+            $id = 1;
+        }
+    ?>
+<body id="<?= $id ?>">
     <main class="website-site position-center">
         <!-- search bar -->
         <header>
-            <form action="" method="GET" class="form-filed">
+            <form action="/search" method="POST" class="form-filed">
                     <span class="magnifying-glass-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                     </span>
                     <label for="search">
-                        <input type="search" id="search" name="search input filed" placeholder="Search notes" class="search">
+                        <input type="text" id="search" name="search" placeholder="Search notes" class="search">
                     </label>
-                    <button class="search-btn">
+                    <button class="search-btn" type="submit" name="submit-search">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/></svg>
-                    
                 </button>
             </form>
         </header>
@@ -50,14 +56,63 @@
         </article>
         <?php endwhile; ?>
 
+        <!-- Create Button -->
         <a href="/create">
             <section class="create-btn-wrapper">
                 <div class="create-btn-div">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>
                 </div>
             </section>
         </a>
 
+        <!-- Pagination -->
+        <section class="pagination">
+            <aside class="pagination-page-info">
+                <?php $page = !isset($_GET['page-nr']) ? 1 : $_GET['page-nr']?>
+                <p>Showing <?= $page ?> of <?= $pages ?> pages</p>
+            </aside>
+
+            <aside class="pagination-toggles">
+            <aside class="pagination-next-button-wrapper">
+                <a href="?page-nr=1" class="btn btn-first">First</a>
+
+                <?php if(isset($_GET['page-nr']) && $_GET['page-nr']):?>
+                    <a href="?page-nr=<?= $_GET['page-nr'] - 1 ?>" class="btn btn-prev">Previous</a>
+                    <?php else: ?>
+                        <a href="" class="btn btn-prev">Previous</a>
+                <?php endif;?>
+            </aside>
+
+            <!-- output the page numbers -->
+            <div class="pagination-page-numbers">
+                <?php for($counter = 1; $counter <= $pages; $counter++): ?>
+                    <a href="?page-nr=<?= $counter ?>" class="btn btn-numbs"><?= $counter ?></a>
+                <?php endfor; ?>
+            </div>
+
+            <aside class="pagination-next-button-wrapper">
+                <!-- Go to the next page -->
+                <?php if(!isset($_GET['page-nr'])):?>
+                    <a href="?page-nr=2" class="btn btn-next">Next</a>
+                    <?php else: ?>
+                        <?php if($_GET['page-nr'] >= $pages):?>
+                            <a href="" class="btn btn-next">Next</a>
+                            <?php else:?>
+                                <a href="?page-nr=<?= $_GET['page-nr'] + 1 ?>" class="btn btn-next">Next</a>
+                        <?php endif; ?>        
+                <?php endif; ?>        
+                <!-- Go to the next page -->
+                <a href="?page-nr=<?= $pages?>" class="btn btn-last">Last</a>
+            </aside>
+            </aside>
+        </section>
+
     </main>
+
+    <script>
+        let links = document.querySelectorAll('.pagination-page-numbers .btn-numbs');
+        let bodyId = parseInt(document.body.id) - 1;
+        links[bodyId].classList.add('active');
+    </script>
 </body>
 </html>

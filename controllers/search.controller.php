@@ -1,21 +1,11 @@
 <?php
     require '../backend/connection.php';
 
-    //Get the search query from the URL
-    $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+    if(isset($_POST['submit-search'])){
+        $search = mysqli_real_escape_string($conn, $_POST['search']);
+        $sql = "SELECT * FROM notes WHERE title LIKE '%$search%' OR text LIKE '%$search%' OR date LIKE '%$search%'";
 
-    $results = [];
+        $result = mysqli_query($conn, $sql);
+        $queryResult = mysqli_num_rows($result);
 
-    if($search !== ''){
-        $like = "%" . $mysqli->real_escape_string($search) . "%";
-        $stmt = $mysqli->prepare("SELECT * FROM notes WHERE title LIKE ? OR text LIKE ?");
-        $stmt->bind_param("ss", $like, $like);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        while($row = $result->fetch_assoc){
-            $results[] = $row;
-        };
-
-        $stmt->close();
-    }
+}

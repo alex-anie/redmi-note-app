@@ -10,6 +10,8 @@
         require 'views/update.view.php';
     }elseif ($uri === '/delete'){
         require 'controllers/delete.controller.php';
+    }elseif ($uri === '/search'){
+        require 'views/search.view.php';
     }else {
         require '404.php';
     }
